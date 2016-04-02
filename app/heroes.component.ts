@@ -1,39 +1,34 @@
-import {Component, OnInit} from 'angular2/core';
-import {Router} from 'angular2/router';
-import {Hero} from './hero';
-import {HeroService} from './hero.service';
-import {HeroDetailComponent} from './hero-detail.component';
+import { Component, OnInit } from 'angular2/core';
+import { Router } from 'angular2/router';
+import { Hero } from './hero';
+import { HeroDetailComponent } from './hero-detail.component';
+import { HeroService } from './hero.service';
 
 @Component({
-	selector: 'my-heroes',
-	templateUrl: 'app/heroes.component.html',
-	styleUrls:['app/heroes.component.css'],
-	directives: [HeroDetailComponent];
+  selector: 'my-heroes',
+  templateUrl: 'app/heroes.component.html',
+  styleUrls:  ['app/heroes.component.css'],
+  directives: [HeroDetailComponent]
 })
+export class HeroesComponent implements OnInit {
+  heroes: Hero[];
+  selectedHero: Hero;
 
-export class HeroesComponent implements OnInit{
-	heroes: Hero[];
-	selectedHero: Hero;
+  constructor(
+    private _router: Router,
+    private _heroService: HeroService) { }
 
-	constructor(private _heroService:HeroService, private _router: Router){}
+  getHeroes() {
+    this._heroService.getHeroes().then(heroes => this.heroes = heroes);
+  }
 
-	getHeroes(){
-		this._heroService.getHeroes().then(heroes=> this.heroes=heroes);
-	}
+  ngOnInit() {
+    this.getHeroes();
+  }
 
-	gotoDetail(){
-		this._router.navigate(['HeroDetail', {id: this.seletedHero.od}]);
-	}
+  onSelect(hero: Hero) { this.selectedHero = hero; }
 
-	ngOnInit(){
-		this.getHeroes();
-	}
-
-	onSelect(hero: Hero){this.selectedHero = hero;}
+  gotoDetail() {
+    this._router.navigate(['HeroDetail', { id: this.selectedHero.id }]);
+  }
 }
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

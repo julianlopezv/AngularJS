@@ -1,3 +1,14 @@
+<div *ngIf="hero">
+<h2>{{hero.name}} detalles!<h/h2>
+<div>
+	<label>Id: </label>{{hero.id}}
+</div>
+<div>
+	<label>Nombre: </label><input [(ngModel)]="hero.name" placeholder="name"/>
+</div>
+<div>
+	<button (click)="goBack()">Atras</button>
+</div>
 <!-- 
 Copyright 2016 Google Inc. All Rights Reserved.
 Use of this source code is governed by an MIT-style license that
