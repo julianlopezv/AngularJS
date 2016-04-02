@@ -36,5 +36,5 @@ import { HeroDetailComponent } from './hero-detail.component';
   }
 ])
 export class AppComponent {
-  title = 'Tour of Heroes';
+  title = 'Lista de Heroes';
 }

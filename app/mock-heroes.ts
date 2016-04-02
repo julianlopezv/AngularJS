@@ -1,16 +1,16 @@
 import {Hero} from './hero';
 
 export var Heroes:Hero[]=[
-	{"id":11, "name":"Ironman"},
-	{"id":11, "name":"Thor"},
-	{"id":11, "name":"Captain America"},
-	{"id":11, "name":"Ant Man"},
-	{"id":11, "name":"Deadpool"},
-	{"id":11, "name":"Spiderman"},
-	{"id":11, "name":"Wolverine"},
-	{"id":11, "name":"Hulk"},
-	{"id":11, "name":"Black Widow"},
-	{"id":11, "name":"Daredevil"}
+	{"id":1, "name":"Ironman"},
+	{"id":2, "name":"Thor"},
+	{"id":3, "name":"Captain America"},
+	{"id":4, "name":"Ant Man"},
+	{"id":5, "name":"Deadpool"},
+	{"id":6, "name":"Spiderman"},
+	{"id":7, "name":"Wolverine"},
+	{"id":8, "name":"Hulk"},
+	{"id":9, "name":"Black Widow"},
+	{"id":10, "name":"Daredevil"}
 ];
 /*
 Copyright 2016 Google Inc. All Rights Reserved.
